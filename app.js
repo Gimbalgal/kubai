@@ -31,7 +31,7 @@ app.post('/', function(req, res) {
     };
 
     const jsonData = JSON.stringify(data);
-    const url = `https://us16.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_LIST_ID}`;
+    const url = `https://us10.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_LIST_ID}`;
     const options = {
         method: "POST",
         auth: `victoria1:${process.env.MAILCHIMP_API_KEY}`
@@ -56,6 +56,7 @@ app.post('/failure', function(req, res){
     res.redirect('/')
 })
 
+const port = process.env.PORT || 5000;
 app.listen(5000, function() {
     console.log('Server is running on port 5000');
 });
